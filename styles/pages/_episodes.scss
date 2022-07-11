@@ -1,0 +1,179 @@
+.c-episodes {
+  @include pageSticky;
+  transition: opacity 0.25s linear;
+
+  &.inactive {
+    opacity: 0;
+  }
+
+  &__sidebar {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='1360' height='2' viewBox='0 0 1360 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5H4V0.5H0V1.5ZM12 1.5H20V0.5H12V1.5ZM28 1.5H36V0.5H28V1.5ZM44 1.5H52V0.5H44V1.5ZM60 1.5H68V0.5H60V1.5ZM76 1.5H84V0.5H76V1.5ZM92 1.5H100V0.5H92V1.5ZM108 1.5H116V0.5H108V1.5ZM124 1.5H132V0.5H124V1.5ZM140 1.5H148V0.5H140V1.5ZM156 1.5H164V0.5H156V1.5ZM172 1.5H180V0.5H172V1.5ZM188 1.5H196V0.5H188V1.5ZM204 1.5H212V0.5H204V1.5ZM220 1.5H228V0.5H220V1.5ZM236 1.5H244V0.5H236V1.5ZM252 1.5H260V0.5H252V1.5ZM268 1.5H276V0.5H268V1.5ZM284 1.5H292V0.5H284V1.5ZM300 1.5H308V0.5H300V1.5ZM316 1.5H324V0.5H316V1.5ZM332 1.5H340V0.5H332V1.5ZM348 1.5H356V0.5H348V1.5ZM364 1.5H372V0.5H364V1.5ZM380 1.5H388V0.5H380V1.5ZM396 1.5H404V0.5H396V1.5ZM412 1.5H420V0.5H412V1.5ZM428 1.5H436V0.5H428V1.5ZM444 1.5H452V0.5H444V1.5ZM460 1.5H468V0.5H460V1.5ZM476 1.5H484V0.5H476V1.5ZM492 1.5H500V0.5H492V1.5ZM508 1.5H516V0.5H508V1.5ZM524 1.5H532V0.5H524V1.5ZM540 1.5H548V0.5H540V1.5ZM556 1.5H564V0.5H556V1.5ZM572 1.5H580V0.5H572V1.5ZM588 1.5H596V0.5H588V1.5ZM604 1.5H612V0.5H604V1.5ZM620 1.5H628V0.5H620V1.5ZM636 1.5H644V0.5H636V1.5ZM652 1.5H660V0.5H652V1.5ZM668 1.5H676V0.5H668V1.5ZM684 1.5H692V0.5H684V1.5ZM700 1.5H708V0.5H700V1.5ZM716 1.5H724V0.5H716V1.5ZM732 1.5H740V0.5H732V1.5ZM748 1.5H756V0.5H748V1.5ZM764 1.5H772V0.5H764V1.5ZM780 1.5H788V0.5H780V1.5ZM796 1.5H804V0.5H796V1.5ZM812 1.5H820V0.5H812V1.5ZM828 1.5H836V0.5H828V1.5ZM844 1.5H852V0.5H844V1.5ZM860 1.5H868V0.5H860V1.5ZM876 1.5H884V0.5H876V1.5ZM892 1.5H900V0.5H892V1.5ZM908 1.5H916V0.5H908V1.5ZM924 1.5H932V0.5H924V1.5ZM940 1.5H948V0.5H940V1.5ZM956 1.5H964V0.5H956V1.5ZM972 1.5H980V0.5H972V1.5ZM988 1.5H996V0.5H988V1.5ZM1004 1.5H1012V0.5H1004V1.5ZM1020 1.5H1028V0.5H1020V1.5ZM1036 1.5H1044V0.5H1036V1.5ZM1052 1.5H1060V0.5H1052V1.5ZM1068 1.5H1076V0.5H1068V1.5ZM1084 1.5H1092V0.5H1084V1.5ZM1100 1.5H1108V0.5H1100V1.5ZM1116 1.5H1124V0.5H1116V1.5ZM1132 1.5H1140V0.5H1132V1.5ZM1148 1.5H1156V0.5H1148V1.5ZM1164 1.5H1172V0.5H1164V1.5ZM1180 1.5H1188V0.5H1180V1.5ZM1196 1.5H1204V0.5H1196V1.5ZM1212 1.5H1220V0.5H1212V1.5ZM1228 1.5H1236V0.5H1228V1.5ZM1244 1.5H1252V0.5H1244V1.5ZM1260 1.5H1268V0.5H1260V1.5ZM1276 1.5H1284V0.5H1276V1.5ZM1292 1.5H1300V0.5H1292V1.5ZM1308 1.5H1316V0.5H1308V1.5ZM1324 1.5H1332V0.5H1324V1.5ZM1340 1.5H1348V0.5H1340V1.5ZM1356 1.5H1360V0.5H1356V1.5Z' fill='black'/%3E%3C/svg%3E%0A");
+      bottom: 0;
+      height: 2px;
+      left: 0;
+    }
+
+    @include media(">desktop-sm") {
+      &::after {
+        display: none;
+      }
+    }
+
+    .c-button {
+      margin-top: 24px;
+    }
+  }
+
+  &__main {
+    @include paddingMobile;
+    &__top {
+      padding-bottom: 32px;
+      @include flex-gap(16px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 16px;
+    }
+  }
+
+  &__filters {
+    margin-top: 24px;
+    position: relative;
+    @include paddingMobile;
+
+    &__buttons {
+      @include paddingMobile;
+    }
+
+    @include media(">desktop-sm") {
+      padding: 24px 0;
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='1360' height='2' viewBox='0 0 1360 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5H4V0.5H0V1.5ZM12 1.5H20V0.5H12V1.5ZM28 1.5H36V0.5H28V1.5ZM44 1.5H52V0.5H44V1.5ZM60 1.5H68V0.5H60V1.5ZM76 1.5H84V0.5H76V1.5ZM92 1.5H100V0.5H92V1.5ZM108 1.5H116V0.5H108V1.5ZM124 1.5H132V0.5H124V1.5ZM140 1.5H148V0.5H140V1.5ZM156 1.5H164V0.5H156V1.5ZM172 1.5H180V0.5H172V1.5ZM188 1.5H196V0.5H188V1.5ZM204 1.5H212V0.5H204V1.5ZM220 1.5H228V0.5H220V1.5ZM236 1.5H244V0.5H236V1.5ZM252 1.5H260V0.5H252V1.5ZM268 1.5H276V0.5H268V1.5ZM284 1.5H292V0.5H284V1.5ZM300 1.5H308V0.5H300V1.5ZM316 1.5H324V0.5H316V1.5ZM332 1.5H340V0.5H332V1.5ZM348 1.5H356V0.5H348V1.5ZM364 1.5H372V0.5H364V1.5ZM380 1.5H388V0.5H380V1.5ZM396 1.5H404V0.5H396V1.5ZM412 1.5H420V0.5H412V1.5ZM428 1.5H436V0.5H428V1.5ZM444 1.5H452V0.5H444V1.5ZM460 1.5H468V0.5H460V1.5ZM476 1.5H484V0.5H476V1.5ZM492 1.5H500V0.5H492V1.5ZM508 1.5H516V0.5H508V1.5ZM524 1.5H532V0.5H524V1.5ZM540 1.5H548V0.5H540V1.5ZM556 1.5H564V0.5H556V1.5ZM572 1.5H580V0.5H572V1.5ZM588 1.5H596V0.5H588V1.5ZM604 1.5H612V0.5H604V1.5ZM620 1.5H628V0.5H620V1.5ZM636 1.5H644V0.5H636V1.5ZM652 1.5H660V0.5H652V1.5ZM668 1.5H676V0.5H668V1.5ZM684 1.5H692V0.5H684V1.5ZM700 1.5H708V0.5H700V1.5ZM716 1.5H724V0.5H716V1.5ZM732 1.5H740V0.5H732V1.5ZM748 1.5H756V0.5H748V1.5ZM764 1.5H772V0.5H764V1.5ZM780 1.5H788V0.5H780V1.5ZM796 1.5H804V0.5H796V1.5ZM812 1.5H820V0.5H812V1.5ZM828 1.5H836V0.5H828V1.5ZM844 1.5H852V0.5H844V1.5ZM860 1.5H868V0.5H860V1.5ZM876 1.5H884V0.5H876V1.5ZM892 1.5H900V0.5H892V1.5ZM908 1.5H916V0.5H908V1.5ZM924 1.5H932V0.5H924V1.5ZM940 1.5H948V0.5H940V1.5ZM956 1.5H964V0.5H956V1.5ZM972 1.5H980V0.5H972V1.5ZM988 1.5H996V0.5H988V1.5ZM1004 1.5H1012V0.5H1004V1.5ZM1020 1.5H1028V0.5H1020V1.5ZM1036 1.5H1044V0.5H1036V1.5ZM1052 1.5H1060V0.5H1052V1.5ZM1068 1.5H1076V0.5H1068V1.5ZM1084 1.5H1092V0.5H1084V1.5ZM1100 1.5H1108V0.5H1100V1.5ZM1116 1.5H1124V0.5H1116V1.5ZM1132 1.5H1140V0.5H1132V1.5ZM1148 1.5H1156V0.5H1148V1.5ZM1164 1.5H1172V0.5H1164V1.5ZM1180 1.5H1188V0.5H1180V1.5ZM1196 1.5H1204V0.5H1196V1.5ZM1212 1.5H1220V0.5H1212V1.5ZM1228 1.5H1236V0.5H1228V1.5ZM1244 1.5H1252V0.5H1244V1.5ZM1260 1.5H1268V0.5H1260V1.5ZM1276 1.5H1284V0.5H1276V1.5ZM1292 1.5H1300V0.5H1292V1.5ZM1308 1.5H1316V0.5H1308V1.5ZM1324 1.5H1332V0.5H1324V1.5ZM1340 1.5H1348V0.5H1340V1.5ZM1356 1.5H1360V0.5H1356V1.5Z' fill='black'/%3E%3C/svg%3E%0A");
+        height: 2px;
+      }
+
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    &__caption {
+      @extend %caption;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    &__selected {
+      @include flex-gap(8px);
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-gap: 48px 24px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  &__empty {
+    &__caption {
+      @extend %caption;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    &__filters {
+      @include flex-gap(8px);
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__load {
+    @extend %button-large;
+    width: 100%;
+    margin-top: 48px;
+  }
+
+  &__title {
+    @extend %title-1;
+    margin-bottom: 12px;
+    @include paddingMobile;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  &__desc {
+    max-width: 400px;
+    @include paddingMobile;
+  }
+
+  &__sort {
+    display: flex;
+
+    &__label {
+      color: $ash;
+    }
+
+    &__icon {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    &__select {
+      position: relative;
+      max-width: 154px;
+      margin-left: 8px;
+      .c-select {
+        padding: 0;
+        border: 0;
+        height: unset;
+        width: calc(100% + 20px);
+      }
+    }
+  }
+}
+
+.c-searchpage {
+  .c-episodes {
+    @include media("<=tablet") {
+      margin-top: 0;
+      &__sidebar {
+        display: none;
+      }
+    }
+
+    &__empty {
+      &__caption {
+        @extend %caption;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      &__suggestions {
+        @include flex-gap(8px);
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

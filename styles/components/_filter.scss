@@ -1,0 +1,55 @@
+.c-filter {
+  @extend %font-button;
+  padding: 8px;
+  display: inline-flex;
+  border: $border-ash;
+
+  &--active {
+    background: $black;
+    color: $off-white;
+    border: 0;
+  }
+
+  &:not(&--active) {
+    &:hover {
+      border: $border-dark;
+      .c-filter__inner {
+        &:after {
+          @extend %link__line--visible;
+        }
+      }
+    }
+  }
+
+  .c-filter__inner {
+    @extend %link__wrapper;
+    display: inline-block;
+
+    &:after {
+      @extend %link__line;
+      @extend %link__line--hidden;
+    }
+  }
+}
+
+.c-tag {
+  background: $black;
+  color: $off-white;
+  padding: 0px 6px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  @extend %caption;
+  text-transform: uppercase;
+
+  &--white {
+    background: $off-white;
+    color: $black;
+  }
+
+  &--transparent {
+    background: none;
+    border: $border-light;
+  }
+}

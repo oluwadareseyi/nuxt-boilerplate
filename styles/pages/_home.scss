@@ -1,0 +1,216 @@
+.c-home {
+  @include media(">tablet") {
+    margin-top: 32px;
+  }
+
+  &__label {
+    @extend %font-button;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  &__trailer {
+    margin-bottom: 24px;
+
+    @include media(">tablet") {
+      margin-bottom: 64px;
+      padding: 0 40px;
+    }
+
+    &__inner {
+      @include ratio(9, 16);
+      @extend %yt-video;
+      @extend %bw-overlay;
+    }
+  }
+
+  &__desc {
+    @extend %tablet;
+    padding: 0 16px;
+    margin-bottom: 64px;
+  }
+
+  &__flipsections {
+    display: flex;
+    flex-direction: column;
+    @include media("<=tablet") {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__newsletter {
+    margin-bottom: 64px;
+    @include media("<=tablet") {
+      // overflow-x: hidden;
+    }
+
+    &__inner {
+      padding: 0 40px;
+      min-height: 96px;
+
+      @include media("<=tablet") {
+        padding: 64px 16px;
+        background: $black;
+        color: $off-white;
+        min-height: 433px;
+
+        .c-newsletter {
+          flex-direction: column;
+
+          @include media(">tablet") {
+            @include flex-gap(24px);
+          }
+
+          &__desc {
+            color: $off-white;
+          }
+
+          &__buttons {
+            .c-button {
+              &:first-child {
+                background: $off-white;
+                color: $black;
+              }
+            }
+          }
+
+          &__phone input[name="code"] {
+            @include media("<=tablet") {
+              background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.293 5.293a1 1 0 0 1 1.414 0L8 9.586l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 0-1.414Z' fill='%23f4f4f4' /%3E%3C/svg%3E");
+            }
+          }
+        }
+
+        .c-checkbox {
+          & + label:before,
+          &:hover + label:before,
+          &:checked + label:before {
+            background: $black;
+          }
+
+          &:checked + label:after {
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m13.5 4.5-7 7L3 8' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          }
+        }
+      }
+    }
+
+    .c-rip {
+      @include media(">tablet") {
+        display: none;
+      }
+    }
+  }
+
+  &__latest {
+    overflow: hidden;
+    color: $off-white;
+    margin-bottom: 64px;
+
+    &__inner {
+      padding: 40px;
+      padding-right: 64px;
+      background: $black;
+
+      .c-container {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &__thumbnail {
+      color: $black;
+      padding: 0 16px;
+
+      @include media(">tablet") {
+        display: none;
+      }
+    }
+
+    &__inner,
+    .c-rip {
+      @include media("<=tablet") {
+        display: none;
+      }
+    }
+
+    &__details {
+      max-width: 421px;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__preview {
+      max-width: 899px;
+      width: 100%;
+      margin-right: 40px;
+
+      .preview-inner {
+        width: 100%;
+        @include ratio(9, 16);
+        @extend %yt-video;
+        @extend %bw-overlay;
+      }
+    }
+
+    &__title {
+      @extend %title-1;
+      margin-bottom: 8px;
+    }
+
+    &__tags {
+      @include gap-margin(8px, 0);
+      margin-bottom: 16px;
+    }
+
+    .c-button {
+      width: fit-content;
+    }
+
+    &__autograph {
+      margin-top: auto;
+      filter: grayscale(1) invert(1);
+      display: flex;
+      height: 43px;
+      margin-left: 8px;
+
+      img {
+      }
+    }
+
+    &__content {
+      display: flex;
+      margin-bottom: 24px;
+    }
+
+    &__guest {
+      > span {
+        span {
+          @extend %font-button;
+        }
+      }
+    }
+  }
+
+  &__more {
+    padding: 0 40px;
+    margin-bottom: 160px;
+
+    @include media("<=tablet") {
+      padding: 0 16px;
+    }
+
+    &__episodes {
+      display: grid;
+      grid-gap: 48px 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin-bottom: 48px;
+    }
+
+    &__cta {
+      @extend %button-large;
+    }
+  }
+}

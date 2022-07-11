@@ -1,0 +1,174 @@
+html {
+  box-sizing: border-box;
+  font-size: calc(100vw / 1440 * 10);
+  overscroll-behavior: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+
+  @include media("<=tablet") {
+    font-size: calc(100vw / 768 * 10);
+  }
+
+  @include media("<=desktop-sm") {
+    font-size: calc(100vw / 950 * 10);
+  }
+
+  @include media("<=phone") {
+    font-size: calc(100vw / 425 * 10);
+  }
+
+  @include media("<=375px") {
+    font-size: calc(100vw / 375 * 10);
+  }
+}
+
+// resets
+body {
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: calc(-0.025 * 16px);
+  color: $black;
+  background: $off-white;
+
+  &.no-scroll {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+    top: var(--top);
+  }
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+[data-marquee] {
+  width: fit-content;
+  position: relative;
+  will-change: transform;
+
+  &.active {
+    animation: marquee 25s linear infinite;
+    animation-play-state: running;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes marquee {
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
+
+svg {
+  width: 100%;
+}
+
+.c-container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.c-rip {
+  width: 100%;
+  display: grid;
+  min-width: 1780px;
+  color: $black;
+  transform: translateX(0);
+
+  &--top {
+    transform: rotate(180deg);
+  }
+
+  &--polaroid {
+    min-width: 890.28px;
+    color: $white;
+    transform: translateX(-5px);
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.c-page,
+.c-page__inner {
+  &.inactive {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    height: 100vh;
+  }
+
+  .animating {
+  }
+}
+
+.c-page {
+  &.inactive {
+    height: calc(100vh + 168px);
+    overflow: hidden;
+    transition: transform 1.2s $ease-modal;
+  }
+}
+
+.c-transition--rip {
+  width: 100%;
+  background: $off-white;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  display: none;
+  overflow: hidden;
+
+  &__inner {
+    min-width: 1721px;
+    transform: translateX(0);
+    will-change: transform;
+    transition: transform 1.2s $ease-modal;
+  }
+}
+
+.pages {
+  transform: translateY(calc(100vh + 168px));
+  height: 100%;
+
+  &.disabled {
+    transition: transform 1.2s $ease-modal;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.visually-hidden {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(
+    1px 1px 1px 1px
+  ); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(
+    1px,
+    1px,
+    1px,
+    1px
+  ); /*maybe deprecated but we need to support legacy browsers */
+  clip-path: inset(
+    50%
+  ); /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}

@@ -1,0 +1,34 @@
+.c-404 {
+  width: 100%;
+  margin-left: auto;
+  margin-top: 72px;
+  max-width: toRem(899);
+
+  @include media("<=tablet") {
+    margin-top: 88px;
+    margin-bottom: 120px;
+    padding: 0 16px;
+    max-width: unset;
+  }
+
+  &__content {
+    max-width: 438px;
+  }
+
+  &__title {
+    @extend %title-1;
+    margin-bottom: 12px;
+  }
+
+  &__message {
+    margin-bottom: 24px;
+  }
+
+  .c-button {
+    display: inline-block;
+  }
+}
+
+.c-errorpage {
+  @include pageSticky;
+}

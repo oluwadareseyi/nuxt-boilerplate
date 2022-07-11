@@ -1,0 +1,42 @@
+.c-thumbnail {
+  width: 100%;
+  position: relative;
+  @extend %bw-overlay;
+
+  &__image {
+    @include ratio(9, 16);
+    margin-bottom: 16px;
+  }
+
+  &__tags {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    z-index: z("1");
+    display: flex;
+    @include flex-gap(8px);
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    @extend %title-2;
+  }
+
+  &__guest {
+    > span {
+      span {
+        @extend %font-button;
+      }
+    }
+  }
+
+  &__autograph {
+    display: flex;
+    height: 43px;
+    margin-left: 8px;
+  }
+
+  &__content {
+    display: flex;
+  }
+}

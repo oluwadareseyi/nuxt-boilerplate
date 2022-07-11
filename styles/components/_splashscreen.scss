@@ -1,0 +1,47 @@
+.c-splashscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z("splashscreen");
+  width: 100%;
+  height: calc(100vh + 168px);
+  background: $off-white;
+  transition: transform 1.2s $ease-modal;
+
+  &__inner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 96px 48px;
+
+    @include media(">tablet") {
+      align-items: center;
+    }
+  }
+
+  &.disabled {
+    transform: translateY(-100%);
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__wordmark {
+    max-width: 898px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    @include media("<=tablet") {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__sub {
+    max-width: 530px;
+    padding: 0 51px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}

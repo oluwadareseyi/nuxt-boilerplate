@@ -1,0 +1,41 @@
+$black: #000000;
+$white: #ffffff;
+$off-white: #f4f4f4;
+$ash: #7a7a7a;
+
+// easings
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-button-hover: cubic-bezier(0.5, -0.25, 0.5, 1);
+$ease-modal: cubic-bezier(1, 0, 0.75, 1);
+$custom: cubic-bezier(0.2, 0.4, 0.25, 1);
+$ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+
+// fonts
+$font-title: "Boing", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$font-body: "Boing", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+// functional colors
+$error: #cf3820;
+
+// border
+$border-dark: 1px solid $black;
+$border-ash: 1px solid $ash;
+$border-light: 1px solid $off-white;
+$border-current: 1px solid currentColor;
+$border-dashed: 1px dashed currentColor;
+
+$z-indexes: (
+  "splashscreen",
+  "modal",
+  "backdrop",
+  "overlay",
+  "nav",
+  "4",
+  "3",
+  "2",
+  "1"
+);

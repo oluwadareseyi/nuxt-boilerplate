@@ -1,0 +1,190 @@
+@mixin fixScroll {
+  .c-nav__fixed {
+    transform: translateY(-100%);
+
+    a,
+    button {
+      visibility: hidden;
+    }
+
+    &.scrolled {
+      transform: translateY(0);
+      a,
+      button {
+        visibility: visible;
+      }
+    }
+  }
+
+  .c-nav__scroll {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.c-nav {
+  &__scroll {
+    padding: 24px 16px;
+
+    @include media(">tablet") {
+      width: 100%;
+      @include flex-gap(40px);
+      display: none;
+      padding: 32px 40px;
+      padding-bottom: 0;
+
+      .c-nav__rightlink {
+        margin-top: auto;
+      }
+    }
+
+    .c-nav__wordmark {
+      max-width: 899px;
+      display: grid;
+      width: 100%;
+      flex-shrink: 0.7;
+      align-self: flex-end;
+
+      svg {
+        width: 100%;
+      }
+
+      @include media("<=tablet") {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__elements {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include media(">tablet") {
+      padding-top: 8px;
+      max-width: 421px;
+    }
+  }
+
+  &__rightlink {
+    width: 100%;
+    @include gap-margin(24px, 0px);
+    display: flex;
+    align-items: center;
+    @extend %font-button;
+    justify-content: space-between;
+  }
+
+  &__search {
+    @extend %font-button;
+    display: inline-flex;
+    align-items: center;
+    @extend %button-hover;
+
+    &__icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+  }
+
+  &__links {
+    @include gap-margin(24px, 0px);
+    flex-shrink: 0;
+  }
+
+  &__link {
+    @extend %button-hover;
+  }
+
+  &__about {
+    margin-bottom: 14px;
+  }
+
+  &__intro {
+    @include flex-gap(8px);
+
+    &__caption {
+      @extend %caption;
+    }
+
+    &__logo {
+      max-width: 90px;
+      height: 16px;
+    }
+  }
+
+  &__infoarea {
+    position: relative;
+    margin-bottom: 16px;
+
+    @include media("<=tablet") {
+      display: none;
+    }
+  }
+
+  &__fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: z("nav");
+    transition: transform 0.3s $ease-out-expo;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: $off-white;
+
+    @include media("<=tablet") {
+      padding: 16px;
+    }
+
+    @include media(">phone") {
+      @include flex-gap(56px, 24px);
+    }
+
+    .c-nav__rightlink {
+      max-width: toRem(899);
+
+      @include media("<=phone") {
+        max-width: 256px;
+      }
+    }
+
+    .c-nav__logos {
+      flex-shrink: 0;
+    }
+
+    .c-nav__wordmark {
+      width: 126.88px;
+      display: block;
+
+      @include media("<=tablet") {
+        display: none;
+      }
+    }
+
+    .c-nav__logomark {
+      width: 32px;
+      height: 32px;
+      display: block;
+
+      @include media(">tablet") {
+        display: none;
+      }
+    }
+  }
+
+  &--scroll {
+    @include fixScroll;
+  }
+
+  @include media("<=tablet") {
+    @include fixScroll;
+
+    .c-nav__scroll {
+      display: block;
+    }
+  }
+}

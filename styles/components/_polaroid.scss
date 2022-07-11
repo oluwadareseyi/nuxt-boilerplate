@@ -1,0 +1,61 @@
+.c-polaroid {
+  width: 100%;
+  overflow: hidden;
+  filter: drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.125))
+    drop-shadow(8px 16px 48px rgba(0, 0, 0, 0.0625));
+  transform: rotate(var(--polaroid-rotation));
+  transition: transform 0.2s $ease-button-hover;
+
+  @include cursor {
+    &:hover {
+      transform: rotate(calc(var(--polaroid-rotation) + 1.5deg)) scale(1.05);
+    }
+  }
+
+  &__content {
+    background: $white;
+    width: 100%;
+    padding: 12px;
+    @include ratio(387, 343);
+  }
+
+  &__image {
+    width: 100%;
+    @include ratio(1, 1);
+
+    img {
+      @extend %img;
+    }
+  }
+
+  &__autograph {
+    max-height: 96px;
+    height: 100%;
+    position: relative;
+    transform: rotate(var(--autograph-rotation));
+    width: 100%;
+
+    &__wrapper {
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      @include ratio(130, 343);
+      position: absolute;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: auto;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &--right {
+    .c-polaroid__autograph__wrapper img {
+      left: unset;
+      right: 0;
+    }
+  }
+}

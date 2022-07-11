@@ -1,0 +1,85 @@
+.c-about {
+  .c-episode {
+    &__details {
+      &__title {
+        margin-bottom: 16px;
+      }
+
+      .c-button {
+        display: block;
+        width: fit-content;
+        margin-top: 32px;
+      }
+    }
+
+    &__guest {
+      @include media("<=tablet") {
+        padding-bottom: 64px;
+        padding-top: 48px;
+        background: $black;
+        color: $off-white;
+        margin-bottom: 0;
+      }
+      &__wrapper {
+        margin-top: 160px;
+
+        @include media("<=tablet") {
+          margin-top: 64px;
+        }
+
+        .c-guest__bio {
+          @include paragraph;
+        }
+      }
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+
+    @include media("<=tablet") {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__desc {
+    @include paddingMobile;
+    margin-bottom: 32px;
+
+    @include media("<=tablet") {
+      margin-bottom: 0;
+      margin-top: 24px;
+    }
+  }
+
+  &__wishlist {
+    @include paddingMobile;
+    &__desc {
+      margin-bottom: 24px;
+    }
+  }
+
+  .c-wishlist {
+    @include flex-gap(24px);
+    display: flex;
+    flex-wrap: wrap;
+
+    &__row {
+      max-width: 322px;
+      width: 100%;
+
+      .c-wishlist__name {
+        &:not(:last-of-type) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    &__name {
+      @extend %title-2;
+      @extend %button-hover;
+      display: block;
+    }
+  }
+}

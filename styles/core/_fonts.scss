@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Boing";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Boing SemiBold"), local("Boing-Semibold"),
+    local("Boing Semibold WEB"), local("Boing"),
+    url(~/assets/fonts/boing/boing_semibold_web.woff2) format("woff2"),
+    url(~/assets/fonts/boing/boing_semibold_web.woff) format("woff"),
+    url(~/assets/fonts/boing/boing_semibold_web.ttf) format("truetype"),
+    url(~/assets/fonts/boing/boing_semibold_web.eot?#iefix)
+      format("embedded-opentype");
+  text-rendering: optimizeLegibility;
+}
